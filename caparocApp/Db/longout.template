@@ -1,0 +1,9 @@
+# longout record template for register inputs
+record(longout,"$(P)$(R)") {
+    field(DTYP,"asynUInt32Digital")
+    field(OUT,"@asynMask($(PORT) $(OFFSET) 0xFFFF)")    
+    field(HOPR,"$(HOPR=1)")
+    field(LOPR,"$(LOPR=0)")
+    field(EGU,"$(EGU="")")  
+    field(DESC,"$(DESC)")
+}
