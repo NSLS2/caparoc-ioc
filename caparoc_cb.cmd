@@ -103,11 +103,11 @@ drvModbusAsynConfigure("$(CAPAROC_ASYNPORT)_ERR_CNT_RST", "$(CAPAROC_ASYNPORT)",
 
 # CB Module Count
 # Function 3 (Read Holding Registers), address 8192, 1 words, data_type = UINT16,
-drvModbusAsynConfigure("$(CAPAROC_ASYNPORT)_NUM_MOD", "$(CAPAROC_ASYNPORT)", 0, 3, 8192, 1, "UINT16", 100, "caparoc")
+drvModbusAsynConfigure("$(CAPAROC_ASYNPORT)_MOD_NUM", "$(CAPAROC_ASYNPORT)", 0, 3, 8192, 1, "UINT16", 100, "caparoc")
 
 # Channel Count
 # Function 3 (Read Holding Registers), address 8193, 16 words, data_type = UINT16,
-drvModbusAsynConfigure("$(CAPAROC_ASYNPORT)_NUM_CH", "$(CAPAROC_ASYNPORT)", 0, 3, 8193, 4, "UINT16", 100, "caparoc")
+drvModbusAsynConfigure("$(CAPAROC_ASYNPORT)_CHAN_NUM", "$(CAPAROC_ASYNPORT)", 0, 3, 8193, 4, "UINT16", 100, "caparoc")
 
 # Min Nominal Current
 # Function 3 (Read Holding Registers), address 8224, 64 words, data_type = UINT16,
@@ -128,7 +128,7 @@ drvModbusAsynConfigure("$(CAPAROC_ASYNPORT)_SYS_INP2", "$(CAPAROC_ASYNPORT)", 0,
 
 # Status
 # Function 3 (Read Holding Registers), address 24592, 64 words, data_type = UINT16,
-drvModbusAsynConfigure("$(CAPAROC_ASYNPORT)_CH_STS", "$(CAPAROC_ASYNPORT)", 0, 3, 24592, 13, "UINT16", 100, "caparoc")
+drvModbusAsynConfigure("$(CAPAROC_ASYNPORT)_CHAN_STS", "$(CAPAROC_ASYNPORT)", 0, 3, 24592, 13, "UINT16", 100, "caparoc")
 
 # Output Current
 # Function 3 (Read Holding Registers), address 24656, 64 words, data_type = UINT16,
@@ -148,9 +148,9 @@ drvModbusAsynConfigure("$(CAPAROC_ASYNPORT)_ERR_CNT", "$(CAPAROC_ASYNPORT)", 0, 
 
 # Control Channel
 # Function 3 (Read Holding Registers), address 49168, 64 words, data_type = UINT16,
-drvModbusAsynConfigure("$(CAPAROC_ASYNPORT)_CTRL_CH_STS", "$(CAPAROC_ASYNPORT)", 0, 3, 49168, 13, "UINT16", 100, "caparoc")
+drvModbusAsynConfigure("$(CAPAROC_ASYNPORT)_CTRL_CHAN_STS", "$(CAPAROC_ASYNPORT)", 0, 3, 49168, 13, "UINT16", 100, "caparoc")
 # Function 16 (Write Multiple Registers), address 49168, 64 words, data_type = UINT16,
-drvModbusAsynConfigure("$(CAPAROC_ASYNPORT)_CTRL_CH_CMD", "$(CAPAROC_ASYNPORT)", 0, 16, 49168, 13, "UINT16", 100, "caparoc")
+drvModbusAsynConfigure("$(CAPAROC_ASYNPORT)_CTRL_CHAN_CMD", "$(CAPAROC_ASYNPORT)", 0, 16, 49168, 13, "UINT16", 100, "caparoc")
 
 # Nominal Current
 # Function 3 (Read Holding Registers), address 49232, 64 words, data_type = UINT16,

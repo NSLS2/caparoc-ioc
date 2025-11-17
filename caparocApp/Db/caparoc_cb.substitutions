@@ -40,16 +40,16 @@ file "bo_word.template" { pattern
 # CB Module Count, modbus address 8192
 file "longin.template" { pattern
  { P		, R			, PORT			, OFFSET, SCAN		, DESC			}
- { $(Sys)	, "$(Dev)Cnt:Mod-I"	, $(ASYNPORT)_NUM_MOD	, 0	, "I/O Intr"	, "No of Connected Modules"	}
+ { $(Sys)	, "$(Dev)Cnt:Mod-I"	, $(ASYNPORT)_MOD_NUM	, 0	, "I/O Intr"	, "No of Connected Modules"	}
 }
 
 # Channel Count, modbus start address 8193
 file "longin.template" { pattern
  { P		, R			, PORT			, OFFSET, SCAN		, DESC			}
- { $(Sys)	, "$(Dev)Cnt:ChMod1-I", $(ASYNPORT)_NUM_CH	, 0	, "I/O Intr"	, "Module 1 Channel No"	}
- { $(Sys)	, "$(Dev)Cnt:ChMod2-I", $(ASYNPORT)_NUM_CH	, 1	, "I/O Intr"	, "Module 2 Channel No"	}
- { $(Sys)	, "$(Dev)Cnt:ChMod3-I", $(ASYNPORT)_NUM_CH	, 2	, "I/O Intr"	, "Module 3 Channel No"	}
- { $(Sys)	, "$(Dev)Cnt:ChMod4-I", $(ASYNPORT)_NUM_CH	, 3	, "I/O Intr"	, "Module 4 Channel No"	}
+ { $(Sys)	, "$(Dev)Cnt:ChMod1-I", $(ASYNPORT)_CHAN_NUM	, 0	, "I/O Intr"	, "Module 1 Channel No"	}
+ { $(Sys)	, "$(Dev)Cnt:ChMod2-I", $(ASYNPORT)_CHAN_NUM	, 1	, "I/O Intr"	, "Module 2 Channel No"	}
+ { $(Sys)	, "$(Dev)Cnt:ChMod3-I", $(ASYNPORT)_CHAN_NUM	, 2	, "I/O Intr"	, "Module 3 Channel No"	}
+ { $(Sys)	, "$(Dev)Cnt:ChMod4-I", $(ASYNPORT)_CHAN_NUM	, 3	, "I/O Intr"	, "Module 4 Channel No"	}
 }
 
 # Min Nominal Current, modbus start address 8224
@@ -106,19 +106,19 @@ file "ai.template" { pattern
 # Status, modbus start address 24592
 file "mbbiDirect.template" { pattern
  { P		, R			, PORT			, OFFSET, MASK		, SCAN	, DESC			}
- { $(Sys)	, "$(Dev)Sts:Ch1-Sts"	, $(ASYNPORT)_CH_STS	, 0	, "0xFFFF"	, "I/O Intr"	, "Channel 1 Status"}
- { $(Sys)	, "$(Dev)Sts:Ch2-Sts"	, $(ASYNPORT)_CH_STS	, 1	, "0xFFFF"	, "I/O Intr"	, "Channel 2 Status"}
- { $(Sys)	, "$(Dev)Sts:Ch3-Sts"	, $(ASYNPORT)_CH_STS	, 2	, "0xFFFF"	, "I/O Intr"	, "Channel 3 Status"}
- { $(Sys)	, "$(Dev)Sts:Ch4-Sts"	, $(ASYNPORT)_CH_STS	, 3	, "0xFFFF"	, "I/O Intr"	, "Channel 4 Status"}
- { $(Sys)	, "$(Dev)Sts:Ch5-Sts"	, $(ASYNPORT)_CH_STS	, 4	, "0xFFFF"	, "I/O Intr"	, "Channel 5 Status"}
- { $(Sys)	, "$(Dev)Sts:Ch6-Sts"	, $(ASYNPORT)_CH_STS	, 5	, "0xFFFF"	, "I/O Intr"	, "Channel 6 Status"}
- { $(Sys)	, "$(Dev)Sts:Ch7-Sts"	, $(ASYNPORT)_CH_STS	, 6	, "0xFFFF"	, "I/O Intr"	, "Channel 7 Status"}
- { $(Sys)	, "$(Dev)Sts:Ch8-Sts"	, $(ASYNPORT)_CH_STS	, 7	, "0xFFFF"	, "I/O Intr"	, "Channel 8 Status"}
- { $(Sys)	, "$(Dev)Sts:Ch9-Sts"	, $(ASYNPORT)_CH_STS	, 8	, "0xFFFF"	, "I/O Intr"	, "Channel 9 Status"}
- { $(Sys)	, "$(Dev)Sts:Ch10-Sts"	, $(ASYNPORT)_CH_STS	, 9	, "0xFFFF"	, "I/O Intr"	, "Channel 10 Status"}
- { $(Sys)	, "$(Dev)Sts:Ch11-Sts"	, $(ASYNPORT)_CH_STS	, 10	, "0xFFFF"	, "I/O Intr"	, "Channel 11 Status"}
- { $(Sys)	, "$(Dev)Sts:Ch12-Sts"	, $(ASYNPORT)_CH_STS	, 11	, "0xFFFF"	, "I/O Intr"	, "Channel 12 Status"}
- { $(Sys)	, "$(Dev)Sts:Ch13-Sts"	, $(ASYNPORT)_CH_STS	, 12	, "0xFFFF"	, "I/O Intr"	, "Channel 13 Status"}
+ { $(Sys)	, "$(Dev)Sts:Ch1-Sts"	, $(ASYNPORT)_CHAN_STS	, 0	, "0xFFFF"	, "I/O Intr"	, "Channel 1 Status"}
+ { $(Sys)	, "$(Dev)Sts:Ch2-Sts"	, $(ASYNPORT)_CHAN_STS	, 1	, "0xFFFF"	, "I/O Intr"	, "Channel 2 Status"}
+ { $(Sys)	, "$(Dev)Sts:Ch3-Sts"	, $(ASYNPORT)_CHAN_STS	, 2	, "0xFFFF"	, "I/O Intr"	, "Channel 3 Status"}
+ { $(Sys)	, "$(Dev)Sts:Ch4-Sts"	, $(ASYNPORT)_CHAN_STS	, 3	, "0xFFFF"	, "I/O Intr"	, "Channel 4 Status"}
+ { $(Sys)	, "$(Dev)Sts:Ch5-Sts"	, $(ASYNPORT)_CHAN_STS	, 4	, "0xFFFF"	, "I/O Intr"	, "Channel 5 Status"}
+ { $(Sys)	, "$(Dev)Sts:Ch6-Sts"	, $(ASYNPORT)_CHAN_STS	, 5	, "0xFFFF"	, "I/O Intr"	, "Channel 6 Status"}
+ { $(Sys)	, "$(Dev)Sts:Ch7-Sts"	, $(ASYNPORT)_CHAN_STS	, 6	, "0xFFFF"	, "I/O Intr"	, "Channel 7 Status"}
+ { $(Sys)	, "$(Dev)Sts:Ch8-Sts"	, $(ASYNPORT)_CHAN_STS	, 7	, "0xFFFF"	, "I/O Intr"	, "Channel 8 Status"}
+ { $(Sys)	, "$(Dev)Sts:Ch9-Sts"	, $(ASYNPORT)_CHAN_STS	, 8	, "0xFFFF"	, "I/O Intr"	, "Channel 9 Status"}
+ { $(Sys)	, "$(Dev)Sts:Ch10-Sts"	, $(ASYNPORT)_CHAN_STS	, 9	, "0xFFFF"	, "I/O Intr"	, "Channel 10 Status"}
+ { $(Sys)	, "$(Dev)Sts:Ch11-Sts"	, $(ASYNPORT)_CHAN_STS	, 10	, "0xFFFF"	, "I/O Intr"	, "Channel 11 Status"}
+ { $(Sys)	, "$(Dev)Sts:Ch12-Sts"	, $(ASYNPORT)_CHAN_STS	, 11	, "0xFFFF"	, "I/O Intr"	, "Channel 12 Status"}
+ { $(Sys)	, "$(Dev)Sts:Ch13-Sts"	, $(ASYNPORT)_CHAN_STS	, 12	, "0xFFFF"	, "I/O Intr"	, "Channel 13 Status"}
 }
 
 # Output Current, modbus start address 24656
@@ -160,36 +160,36 @@ file "longin.template" { pattern
 # Control Channel, modbus start address 49168
 file "bi_word.template" { pattern
  { P		, R				, PORT				, OFFSET, SCAN		, ZNAM		, ONAM	, ZSV		, OSV		, DESC				}
- { $(Sys)	, "$(Dev)Sts:CtrlCh1-Sts"	, $(ASYNPORT)_CTRL_CH_STS	, 0	, "I/O Intr"	, "Off"	,   "On"	, "NO_ALARM"	, "NO_ALARM"	, "Channel 1 Pwr Sts"	}
- { $(Sys)	, "$(Dev)Sts:CtrlCh2-Sts"	, $(ASYNPORT)_CTRL_CH_STS	, 1	, "I/O Intr"	, "Off"	,   "On"	, "NO_ALARM"	, "NO_ALARM"	, "Channel 2 Pwr Sts"	}
- { $(Sys)	, "$(Dev)Sts:CtrlCh3-Sts"	, $(ASYNPORT)_CTRL_CH_STS	, 2	, "I/O Intr"	, "Off"	,   "On"	, "NO_ALARM"	, "NO_ALARM"	, "Channel 3 Pwr Sts"	}
- { $(Sys)	, "$(Dev)Sts:CtrlCh4-Sts"	, $(ASYNPORT)_CTRL_CH_STS	, 3	, "I/O Intr"	, "Off"	,   "On"	, "NO_ALARM"	, "NO_ALARM"	, "Channel 4 Pwr Sts"	}
- { $(Sys)	, "$(Dev)Sts:CtrlCh5-Sts"	, $(ASYNPORT)_CTRL_CH_STS	, 4	, "I/O Intr"	, "Off"	,   "On"	, "NO_ALARM"	, "NO_ALARM"	, "Channel 5 Pwr Sts"	}
- { $(Sys)	, "$(Dev)Sts:CtrlCh6-Sts"	, $(ASYNPORT)_CTRL_CH_STS	, 5	, "I/O Intr"	, "Off"	,   "On"	, "NO_ALARM"	, "NO_ALARM"	, "Channel 6 Pwr Sts"	}
- { $(Sys)	, "$(Dev)Sts:CtrlCh7-Sts"	, $(ASYNPORT)_CTRL_CH_STS	, 6	, "I/O Intr"	, "Off"	,   "On"	, "NO_ALARM"	, "NO_ALARM"	, "Channel 7 Pwr Sts"	}
- { $(Sys)	, "$(Dev)Sts:CtrlCh8-Sts"	, $(ASYNPORT)_CTRL_CH_STS	, 7	, "I/O Intr"	, "Off"	,   "On"	, "NO_ALARM"	, "NO_ALARM"	, "Channel 8 Pwr Sts"	}
- { $(Sys)	, "$(Dev)Sts:CtrlCh9-Sts"	, $(ASYNPORT)_CTRL_CH_STS	, 8	, "I/O Intr"	, "Off"	,   "On"	, "NO_ALARM"	, "NO_ALARM"	, "Channel 9 Pwr Sts"	}
- { $(Sys)	, "$(Dev)Sts:CtrlCh10-Sts"	, $(ASYNPORT)_CTRL_CH_STS	, 9	, "I/O Intr"	, "Off"	,   "On"	, "NO_ALARM"	, "NO_ALARM"	, "Channel 10 Pwr Sts"	}
- { $(Sys)	, "$(Dev)Sts:CtrlCh11-Sts"	, $(ASYNPORT)_CTRL_CH_STS	, 10	, "I/O Intr"	, "Off"	,   "On"	, "NO_ALARM"	, "NO_ALARM"	, "Channel 11 Pwr Sts"	}
- { $(Sys)	, "$(Dev)Sts:CtrlCh12-Sts"	, $(ASYNPORT)_CTRL_CH_STS	, 11	, "I/O Intr"	, "Off"	,   "On"	, "NO_ALARM"	, "NO_ALARM"	, "Channel 12 Pwr Sts"	}
- { $(Sys)	, "$(Dev)Sts:CtrlCh13-Sts"	, $(ASYNPORT)_CTRL_CH_STS	, 12	, "I/O Intr"	, "Off"	,   "On"	, "NO_ALARM"	, "NO_ALARM"	, "Channel 13 Pwr Sts"	}
+ { $(Sys)	, "$(Dev)Sts:CtrlCh1-Sts"	, $(ASYNPORT)_CTRL_CHAN_STS	, 0	, "I/O Intr"	, "Off"	,   "On"	, "NO_ALARM"	, "NO_ALARM"	, "Channel 1 Pwr Sts"	}
+ { $(Sys)	, "$(Dev)Sts:CtrlCh2-Sts"	, $(ASYNPORT)_CTRL_CHAN_STS	, 1	, "I/O Intr"	, "Off"	,   "On"	, "NO_ALARM"	, "NO_ALARM"	, "Channel 2 Pwr Sts"	}
+ { $(Sys)	, "$(Dev)Sts:CtrlCh3-Sts"	, $(ASYNPORT)_CTRL_CHAN_STS	, 2	, "I/O Intr"	, "Off"	,   "On"	, "NO_ALARM"	, "NO_ALARM"	, "Channel 3 Pwr Sts"	}
+ { $(Sys)	, "$(Dev)Sts:CtrlCh4-Sts"	, $(ASYNPORT)_CTRL_CHAN_STS	, 3	, "I/O Intr"	, "Off"	,   "On"	, "NO_ALARM"	, "NO_ALARM"	, "Channel 4 Pwr Sts"	}
+ { $(Sys)	, "$(Dev)Sts:CtrlCh5-Sts"	, $(ASYNPORT)_CTRL_CHAN_STS	, 4	, "I/O Intr"	, "Off"	,   "On"	, "NO_ALARM"	, "NO_ALARM"	, "Channel 5 Pwr Sts"	}
+ { $(Sys)	, "$(Dev)Sts:CtrlCh6-Sts"	, $(ASYNPORT)_CTRL_CHAN_STS	, 5	, "I/O Intr"	, "Off"	,   "On"	, "NO_ALARM"	, "NO_ALARM"	, "Channel 6 Pwr Sts"	}
+ { $(Sys)	, "$(Dev)Sts:CtrlCh7-Sts"	, $(ASYNPORT)_CTRL_CHAN_STS	, 6	, "I/O Intr"	, "Off"	,   "On"	, "NO_ALARM"	, "NO_ALARM"	, "Channel 7 Pwr Sts"	}
+ { $(Sys)	, "$(Dev)Sts:CtrlCh8-Sts"	, $(ASYNPORT)_CTRL_CHAN_STS	, 7	, "I/O Intr"	, "Off"	,   "On"	, "NO_ALARM"	, "NO_ALARM"	, "Channel 8 Pwr Sts"	}
+ { $(Sys)	, "$(Dev)Sts:CtrlCh9-Sts"	, $(ASYNPORT)_CTRL_CHAN_STS	, 8	, "I/O Intr"	, "Off"	,   "On"	, "NO_ALARM"	, "NO_ALARM"	, "Channel 9 Pwr Sts"	}
+ { $(Sys)	, "$(Dev)Sts:CtrlCh10-Sts"	, $(ASYNPORT)_CTRL_CHAN_STS	, 9	, "I/O Intr"	, "Off"	,   "On"	, "NO_ALARM"	, "NO_ALARM"	, "Channel 10 Pwr Sts"	}
+ { $(Sys)	, "$(Dev)Sts:CtrlCh11-Sts"	, $(ASYNPORT)_CTRL_CHAN_STS	, 10	, "I/O Intr"	, "Off"	,   "On"	, "NO_ALARM"	, "NO_ALARM"	, "Channel 11 Pwr Sts"	}
+ { $(Sys)	, "$(Dev)Sts:CtrlCh12-Sts"	, $(ASYNPORT)_CTRL_CHAN_STS	, 11	, "I/O Intr"	, "Off"	,   "On"	, "NO_ALARM"	, "NO_ALARM"	, "Channel 12 Pwr Sts"	}
+ { $(Sys)	, "$(Dev)Sts:CtrlCh13-Sts"	, $(ASYNPORT)_CTRL_CHAN_STS	, 12	, "I/O Intr"	, "Off"	,   "On"	, "NO_ALARM"	, "NO_ALARM"	, "Channel 13 Pwr Sts"	}
 }
 
 file "bo_word.template" { pattern
  { P		, R				, PORT				, OFFSET, ZNAM	, ONAM	, ZSV		, OSV		, DESC				}
- { $(Sys)	, "$(Dev)Cmd:CtrlCh1-Cmd"	, $(ASYNPORT)_CTRL_CH_CMD	, 0	, "Off"	, "On"	, "NO_ALARM"	, "NO_ALARM"	, "Channel 1 Pwr Ctrl"	}
- { $(Sys)	, "$(Dev)Cmd:CtrlCh2-Cmd"	, $(ASYNPORT)_CTRL_CH_CMD	, 1	, "Off"	, "On"	, "NO_ALARM"	, "NO_ALARM"	, "Channel 2 Pwr Ctrl"	}
- { $(Sys)	, "$(Dev)Cmd:CtrlCh3-Cmd"	, $(ASYNPORT)_CTRL_CH_CMD	, 2	, "Off"	, "On"	, "NO_ALARM"	, "NO_ALARM"	, "Channel 3 Pwr Ctrl"	}
- { $(Sys)	, "$(Dev)Cmd:CtrlCh4-Cmd"	, $(ASYNPORT)_CTRL_CH_CMD	, 3	, "Off"	, "On"	, "NO_ALARM"	, "NO_ALARM"	, "Channel 4 Pwr Ctrl"	}
- { $(Sys)	, "$(Dev)Cmd:CtrlCh5-Cmd"	, $(ASYNPORT)_CTRL_CH_CMD	, 4	, "Off"	, "On"	, "NO_ALARM"	, "NO_ALARM"	, "Channel 5 Pwr Ctrl"	}
- { $(Sys)	, "$(Dev)Cmd:CtrlCh6-Cmd"	, $(ASYNPORT)_CTRL_CH_CMD	, 5	, "Off"	, "On"	, "NO_ALARM"	, "NO_ALARM"	, "Channel 6 Pwr Ctrl"	}
- { $(Sys)	, "$(Dev)Cmd:CtrlCh7-Cmd"	, $(ASYNPORT)_CTRL_CH_CMD	, 6	, "Off"	, "On"	, "NO_ALARM"	, "NO_ALARM"	, "Channel 7 Pwr Ctrl"	}
- { $(Sys)	, "$(Dev)Cmd:CtrlCh8-Cmd"	, $(ASYNPORT)_CTRL_CH_CMD	, 7	, "Off"	, "On"	, "NO_ALARM"	, "NO_ALARM"	, "Channel 8 Pwr Ctrl"	}
- { $(Sys)	, "$(Dev)Cmd:CtrlCh9-Cmd"	, $(ASYNPORT)_CTRL_CH_CMD	, 8	, "Off"	, "On"	, "NO_ALARM"	, "NO_ALARM"	, "Channel 9 Pwr Ctrl"	}
- { $(Sys)	, "$(Dev)Cmd:CtrlCh10-Cmd"	, $(ASYNPORT)_CTRL_CH_CMD	, 9	, "Off"	, "On"	, "NO_ALARM"	, "NO_ALARM"	, "Channel 10 Pwr Ctrl"	}
- { $(Sys)	, "$(Dev)Cmd:CtrlCh11-Cmd"	, $(ASYNPORT)_CTRL_CH_CMD	, 10	, "Off"	, "On"	, "NO_ALARM"	, "NO_ALARM"	, "Channel 11 Pwr Ctrl"	}
- { $(Sys)	, "$(Dev)Cmd:CtrlCh12-Cmd"	, $(ASYNPORT)_CTRL_CH_CMD	, 11	, "Off"	, "On"	, "NO_ALARM"	, "NO_ALARM"	, "Channel 12 Pwr Ctrl"	}
- { $(Sys)	, "$(Dev)Cmd:CtrlCh13-Cmd"	, $(ASYNPORT)_CTRL_CH_CMD	, 12	, "Off"	, "On"	, "NO_ALARM"	, "NO_ALARM"	, "Channel 13 Pwr Ctrl"	}
+ { $(Sys)	, "$(Dev)Cmd:CtrlCh1-Cmd"	, $(ASYNPORT)_CTRL_CHAN_CMD	, 0	, "Off"	, "On"	, "NO_ALARM"	, "NO_ALARM"	, "Channel 1 Pwr Ctrl"	}
+ { $(Sys)	, "$(Dev)Cmd:CtrlCh2-Cmd"	, $(ASYNPORT)_CTRL_CHAN_CMD	, 1	, "Off"	, "On"	, "NO_ALARM"	, "NO_ALARM"	, "Channel 2 Pwr Ctrl"	}
+ { $(Sys)	, "$(Dev)Cmd:CtrlCh3-Cmd"	, $(ASYNPORT)_CTRL_CHAN_CMD	, 2	, "Off"	, "On"	, "NO_ALARM"	, "NO_ALARM"	, "Channel 3 Pwr Ctrl"	}
+ { $(Sys)	, "$(Dev)Cmd:CtrlCh4-Cmd"	, $(ASYNPORT)_CTRL_CHAN_CMD	, 3	, "Off"	, "On"	, "NO_ALARM"	, "NO_ALARM"	, "Channel 4 Pwr Ctrl"	}
+ { $(Sys)	, "$(Dev)Cmd:CtrlCh5-Cmd"	, $(ASYNPORT)_CTRL_CHAN_CMD	, 4	, "Off"	, "On"	, "NO_ALARM"	, "NO_ALARM"	, "Channel 5 Pwr Ctrl"	}
+ { $(Sys)	, "$(Dev)Cmd:CtrlCh6-Cmd"	, $(ASYNPORT)_CTRL_CHAN_CMD	, 5	, "Off"	, "On"	, "NO_ALARM"	, "NO_ALARM"	, "Channel 6 Pwr Ctrl"	}
+ { $(Sys)	, "$(Dev)Cmd:CtrlCh7-Cmd"	, $(ASYNPORT)_CTRL_CHAN_CMD	, 6	, "Off"	, "On"	, "NO_ALARM"	, "NO_ALARM"	, "Channel 7 Pwr Ctrl"	}
+ { $(Sys)	, "$(Dev)Cmd:CtrlCh8-Cmd"	, $(ASYNPORT)_CTRL_CHAN_CMD	, 7	, "Off"	, "On"	, "NO_ALARM"	, "NO_ALARM"	, "Channel 8 Pwr Ctrl"	}
+ { $(Sys)	, "$(Dev)Cmd:CtrlCh9-Cmd"	, $(ASYNPORT)_CTRL_CHAN_CMD	, 8	, "Off"	, "On"	, "NO_ALARM"	, "NO_ALARM"	, "Channel 9 Pwr Ctrl"	}
+ { $(Sys)	, "$(Dev)Cmd:CtrlCh10-Cmd"	, $(ASYNPORT)_CTRL_CHAN_CMD	, 9	, "Off"	, "On"	, "NO_ALARM"	, "NO_ALARM"	, "Channel 10 Pwr Ctrl"	}
+ { $(Sys)	, "$(Dev)Cmd:CtrlCh11-Cmd"	, $(ASYNPORT)_CTRL_CHAN_CMD	, 10	, "Off"	, "On"	, "NO_ALARM"	, "NO_ALARM"	, "Channel 11 Pwr Ctrl"	}
+ { $(Sys)	, "$(Dev)Cmd:CtrlCh12-Cmd"	, $(ASYNPORT)_CTRL_CHAN_CMD	, 11	, "Off"	, "On"	, "NO_ALARM"	, "NO_ALARM"	, "Channel 12 Pwr Ctrl"	}
+ { $(Sys)	, "$(Dev)Cmd:CtrlCh13-Cmd"	, $(ASYNPORT)_CTRL_CHAN_CMD	, 12	, "Off"	, "On"	, "NO_ALARM"	, "NO_ALARM"	, "Channel 13 Pwr Ctrl"	}
 }
 
 # Nominal Current, modbus start address 49232
