@@ -12,7 +12,8 @@ DB += bo_word.template
 DB += longin.template
 DB += longout.template
 DB += mbbiDirect.template
-DB += caparoc_cb.substitutions
+DB += stringWaveformIn.template
+DB += caparoc_cb.db
 
 #----------------------------------------------------
 # If <anyname>.db template is not named <anyname>*.template add

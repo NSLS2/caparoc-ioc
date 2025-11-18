@@ -1,4 +1,3 @@
-
 #######################################################################
 # For TCP/IP use the following standard asyn command:
 # drvAsynIPPortConfigure(const char *portName,
@@ -138,8 +137,6 @@ drvModbusAsynConfigure("$(CAPAROC_ASYNPORT)_I_LOAD", "$(CAPAROC_ASYNPORT)", 0, 3
 # Function 3 (Read Holding Registers), address 24720, 64 words, data_type = UINT16,
 drvModbusAsynConfigure("$(CAPAROC_ASYNPORT)_ERR_CNT", "$(CAPAROC_ASYNPORT)", 0, 3, 24720, 13, "UINT16", 100, "caparoc")
 
-
-
 # Global Switch-on Delay
 # Function 3 (Read Holding Registers), address 49152, 1 words, data_type = UINT16,
 #drvModbusAsynConfigure("$(CAPAROC_ASYNPORT)_GSOD_RB", "$(CAPAROC_ASYNPORT)", 0, 3, 49152, 1, "UINT16", 100, "caparoc")
@@ -157,6 +154,9 @@ drvModbusAsynConfigure("$(CAPAROC_ASYNPORT)_CTRL_CHAN_CMD", "$(CAPAROC_ASYNPORT)
 drvModbusAsynConfigure("$(CAPAROC_ASYNPORT)_NOM_I_RB", "$(CAPAROC_ASYNPORT)", 0, 3, 49232, 13, "UINT16", 100, "caparoc")
 # Function 16 (Write Multiple Registers), address 49232, 64 words, data_type = UINT16,
 drvModbusAsynConfigure("$(CAPAROC_ASYNPORT)_NOM_I_SP", "$(CAPAROC_ASYNPORT)", 0, 16, 49232, 13, "UINT16", 100, "caparoc")
+
+# Function 3 (Read Holding Registers), address 4096,  80 words, data_type = STRING32
+drvModbusAsynConfigure("$(CAPAROC_ASYNPORT)_MOD_NAME", "$(CAPAROC_ASYNPORT)", 0, 3, 4096, 80, "STRING_HIGH_LOW", 100, "caparoc")
 
 # Load database
 dbLoadRecords("$(TOP)/db/caparoc_cb.db","Sys=$(SYSNAME), Dev=$(DEV), ASYNPORT=$(CAPAROC_ASYNPORT)")

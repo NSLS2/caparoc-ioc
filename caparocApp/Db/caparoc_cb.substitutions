@@ -226,3 +226,13 @@ file "longout.template" { pattern
  { $(Sys)	, "$(Dev)I:NomCh12-SP"	, $(ASYNPORT)_NOM_I_SP	, 11	, "A"	, "Channel 12 Nominal Current SP"	}
  { $(Sys)	, "$(Dev)I:NomCh13-SP"	, $(ASYNPORT)_NOM_I_SP	, 12	, "A"	, "Channel 13 Nominal Current SP"	}
 }
+
+# Product name, modbus start address 4096
+file "stringWaveformIn.template" { pattern
+ { P		, R			, PORT			, OFFSET, DATA_TYPE		, NELM	, SCAN		, DESC			}
+ { $(Sys)	, "$(Dev)Name:Mod0-I"	, $(ASYNPORT)_MOD_NAME	, 0	, "STRING_HIGH_LOW"	, 32	, "I/O Intr"	, "Module 0 Name"	}
+ { $(Sys)	, "$(Dev)Name:Mod1-I"	, $(ASYNPORT)_MOD_NAME	, 16	, "STRING_HIGH_LOW"	, 32	, "I/O Intr"	, "Module 1 Name"	}
+ { $(Sys)	, "$(Dev)Name:Mod2-I"	, $(ASYNPORT)_MOD_NAME	, 32	, "STRING_HIGH_LOW"	, 32	, "I/O Intr"	, "Module 2 Name"	}
+ { $(Sys)	, "$(Dev)Name:Mod3-I"	, $(ASYNPORT)_MOD_NAME	, 48	, "STRING_HIGH_LOW"	, 32	, "I/O Intr"	, "Module 3 Name"	}
+ { $(Sys)	, "$(Dev)Name:Mod4-I"	, $(ASYNPORT)_MOD_NAME	, 64	, "STRING_HIGH_LOW"	, 32	, "I/O Intr"	, "Module 4 Name"	}
+}

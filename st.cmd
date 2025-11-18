@@ -9,7 +9,7 @@
 ## Generic EnvSet
 epicsEnvSet("EPICS_BASE","/usr/lib/epics")
 epicsEnvSet("MODBUS", "/usr/lib/epics")
-epicsEnvSet("TOP","/nsls2/users/hxu/iocs/caparoc")
+epicsEnvSet("TOP","/nsls2/users/hxu/iocs/caparoc-ioc")
 
 ## Register all support components
 dbLoadDatabase("$(TOP)/dbd/caparoc.dbd",0,0)
