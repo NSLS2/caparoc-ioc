@@ -1,7 +1,7 @@
 # Global status, modbus address 24576
 file "mbbiDirect.template" { pattern
- { P		, R			, PORT			, OFFSET, MASK		, SCAN	, DESC			}
- { $(Sys)	, "$(Dev)Sts:Sys-Sts"	, $(ASYNPORT)_SYS_STS	, 0	, "0xFFFF"	, "I/O Intr"	, "Global Status"}
+ { P		, R			, PORT			, OFFSET, MASK		, SCAN		, DESC			}
+ { $(Sys)	, "$(Dev)Sts:Glb-Sts"	, $(ASYNPORT)_GLB_STS	, 0	, "0xFFFF"	, "I/O Intr"	, "Global Status"	}
 }
 
 # Status function module PS, modbus address 28672

@@ -92,37 +92,42 @@ modbusInterposeConfig("$(CAPAROC_ASYNPORT)", 0, 2000, 0)
 #######################################################################
 
 # Channel Error Reset
-# Function 16 (Write Multiple Registers), address 272, 16 words, data_type = UINT16,
+# Function 16 (Write Multiple Registers), address 272, 4 words, data_type = UINT16,
 drvModbusAsynConfigure("$(CAPAROC_ASYNPORT)_ERR_RST", "$(CAPAROC_ASYNPORT)", 0, 16, 272, 4, "UINT16", 100, "caparoc")
-#drvModbusAsynConfigure("$(CAPAROC_ASYNPORT)_ERR_RST", "$(CAPAROC_ASYNPORT)", 0, 6, 272, 1, "UINT16", 100, "caparoc")
 
 # Error Counter Reset
-# Function 16 (Write Multiple Registers), address 288, 64 words, data_type = UINT16,
+# Function 16 (Write Multiple Registers), address 288, 13 words, data_type = UINT16,
 drvModbusAsynConfigure("$(CAPAROC_ASYNPORT)_ERR_CNT_RST", "$(CAPAROC_ASYNPORT)", 0, 16, 288, 13, "UINT16", 100, "caparoc")
 
 # CB Module Count
-# Function 3 (Read Holding Registers), address 8192, 1 words, data_type = UINT16,
+# Function 3 (Read Holding Registers), address 8192, 1 word, data_type = UINT16,
 drvModbusAsynConfigure("$(CAPAROC_ASYNPORT)_MOD_NUM", "$(CAPAROC_ASYNPORT)", 0, 3, 8192, 1, "UINT16", 100, "caparoc")
 
 # Channel Count
-# Function 3 (Read Holding Registers), address 8193, 16 words, data_type = UINT16,
+# Function 3 (Read Holding Registers), address 8193, 4 words, data_type = UINT16,
 drvModbusAsynConfigure("$(CAPAROC_ASYNPORT)_CHAN_NUM", "$(CAPAROC_ASYNPORT)", 0, 3, 8193, 4, "UINT16", 100, "caparoc")
 
 # Min Nominal Current
-# Function 3 (Read Holding Registers), address 8224, 64 words, data_type = UINT16,
+# Function 3 (Read Holding Registers), address 8224, 13 words, data_type = UINT16,
 drvModbusAsynConfigure("$(CAPAROC_ASYNPORT)_MIN_NOM_I", "$(CAPAROC_ASYNPORT)", 0, 3, 8224, 13, "UINT16", 100, "caparoc")
 
 # Max Nominal Current
-# Function 3 (Read Holding Registers), address 8288, 64 words, data_type = UINT16,
+# Function 3 (Read Holding Registers), address 8288, 13 words, data_type = UINT16,
 drvModbusAsynConfigure("$(CAPAROC_ASYNPORT)_MAX_NOM_I", "$(CAPAROC_ASYNPORT)", 0, 3, 8288, 13, "UINT16", 100, "caparoc")
 
+# Global Status
+# Function 3 (Read Holding Registers), address 24576, 1 words, data_type = UINT16,
+drvModbusAsynConfigure("$(CAPAROC_ASYNPORT)_GLB_STS", "$(CAPAROC_ASYNPORT)", 0, 3, 24576, 1, "UINT16", 100, "caparoc")
 
-drvModbusAsynConfigure("$(CAPAROC_ASYNPORT)_SYS_STS", "$(CAPAROC_ASYNPORT)", 0, 3, 24576, 1, "UINT16", 100, "caparoc")
+# Function 3 (Read Holding Registers), address 28672, 1 words, data_type = UINT16,
 drvModbusAsynConfigure("$(CAPAROC_ASYNPORT)_PS_FUNC", "$(CAPAROC_ASYNPORT)", 0, 3, 28672, 1, "UINT16", 100, "caparoc")
 
-# Input Voltage, Current
-# Function 3 (Read Holding Registers), address 24577, 10 words, data_type = UINT16,
+# System Current, input voltage
+# Function 3 (Read Holding Registers), address 24577, 2 words, data_type = UINT16,
 drvModbusAsynConfigure("$(CAPAROC_ASYNPORT)_SYS_INP1", "$(CAPAROC_ASYNPORT)", 0, 3, 24577, 2, "UINT16", 100, "caparoc")
+
+# Sum of nominal currents, internal temperature
+# Function 3 (Read Holding Registers), address 24577, 5 words, data_type = UINT16,
 drvModbusAsynConfigure("$(CAPAROC_ASYNPORT)_SYS_INP2", "$(CAPAROC_ASYNPORT)", 0, 3, 24581, 5, "UINT16", 100, "caparoc")
 
 # Status
@@ -130,31 +135,26 @@ drvModbusAsynConfigure("$(CAPAROC_ASYNPORT)_SYS_INP2", "$(CAPAROC_ASYNPORT)", 0,
 drvModbusAsynConfigure("$(CAPAROC_ASYNPORT)_CHAN_STS", "$(CAPAROC_ASYNPORT)", 0, 3, 24592, 13, "UINT16", 100, "caparoc")
 
 # Output Current
-# Function 3 (Read Holding Registers), address 24656, 64 words, data_type = UINT16,
+# Function 3 (Read Holding Registers), address 24656, 13 words, data_type = UINT16,
 drvModbusAsynConfigure("$(CAPAROC_ASYNPORT)_I_LOAD", "$(CAPAROC_ASYNPORT)", 0, 3, 24656, 13, "UINT16", 100, "caparoc")
 
 # Error Counter
-# Function 3 (Read Holding Registers), address 24720, 64 words, data_type = UINT16,
+# Function 3 (Read Holding Registers), address 24720, 13 words, data_type = UINT16,
 drvModbusAsynConfigure("$(CAPAROC_ASYNPORT)_ERR_CNT", "$(CAPAROC_ASYNPORT)", 0, 3, 24720, 13, "UINT16", 100, "caparoc")
 
-# Global Switch-on Delay
-# Function 3 (Read Holding Registers), address 49152, 1 words, data_type = UINT16,
-#drvModbusAsynConfigure("$(CAPAROC_ASYNPORT)_GSOD_RB", "$(CAPAROC_ASYNPORT)", 0, 3, 49152, 1, "UINT16", 100, "caparoc")
-# Function 16 (Write Multiple Registers), address 49152, 1 words, data_type = UINT16,
-#drvModbusAsynConfigure("$(CAPAROC_ASYNPORT)_GSOD", "$(CAPAROC_ASYNPORT)", 0, 16, 49152, 1, "UINT16", 100, "caparoc")
-
 # Control Channel
-# Function 3 (Read Holding Registers), address 49168, 64 words, data_type = UINT16,
+# Function 3 (Read Holding Registers), address 49168, 13 words, data_type = UINT16,
 drvModbusAsynConfigure("$(CAPAROC_ASYNPORT)_CTRL_CHAN_STS", "$(CAPAROC_ASYNPORT)", 0, 3, 49168, 13, "UINT16", 100, "caparoc")
-# Function 16 (Write Multiple Registers), address 49168, 64 words, data_type = UINT16,
+# Function 16 (Write Multiple Registers), address 49168, 13 words, data_type = UINT16,
 drvModbusAsynConfigure("$(CAPAROC_ASYNPORT)_CTRL_CHAN_CMD", "$(CAPAROC_ASYNPORT)", 0, 16, 49168, 13, "UINT16", 100, "caparoc")
 
 # Nominal Current
-# Function 3 (Read Holding Registers), address 49232, 64 words, data_type = UINT16,
+# Function 3 (Read Holding Registers), address 49232, 13 words, data_type = UINT16,
 drvModbusAsynConfigure("$(CAPAROC_ASYNPORT)_NOM_I_RB", "$(CAPAROC_ASYNPORT)", 0, 3, 49232, 13, "UINT16", 100, "caparoc")
 # Function 16 (Write Multiple Registers), address 49232, 64 words, data_type = UINT16,
 drvModbusAsynConfigure("$(CAPAROC_ASYNPORT)_NOM_I_SP", "$(CAPAROC_ASYNPORT)", 0, 16, 49232, 13, "UINT16", 100, "caparoc")
 
+# Product Name
 # Function 3 (Read Holding Registers), address 4096,  80 words, data_type = STRING32
 drvModbusAsynConfigure("$(CAPAROC_ASYNPORT)_MOD_NAME", "$(CAPAROC_ASYNPORT)", 0, 3, 4096, 80, "STRING_HIGH_LOW", 100, "caparoc")
 
