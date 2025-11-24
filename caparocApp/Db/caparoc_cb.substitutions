@@ -4,12 +4,6 @@ file "mbbiDirect.template" { pattern
  { $(Sys)	, "$(Dev)Sts:Glb-Sts"	, $(ASYNPORT)_GLB_STS	, 0	, "0xFFFF"	, "I/O Intr"	, "Global Status"	}
 }
 
-# Status function module PS, modbus address 28672
-file "mbbiDirect.template" { pattern
- { P		, R				, PORT			, OFFSET, MASK		, SCAN	, DESC			}
- { $(Sys)	, "$(Dev)Sts:PwrFunc-Sts"	, $(ASYNPORT)_PS_FUNC	, 0	, "0xFFFF"	, "I/O Intr"	, "Status Function Module PS"	}
-}
-
 # Channel Error Reset, modbus start address 272
 file "bo_word.template" { pattern
  { P		, R				, PORT			, OFFSET, ZNAM	, ONAM		, DESC				}

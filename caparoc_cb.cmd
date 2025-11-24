@@ -119,9 +119,6 @@ drvModbusAsynConfigure("$(CAPAROC_ASYNPORT)_MAX_NOM_I", "$(CAPAROC_ASYNPORT)", 0
 # Function 3 (Read Holding Registers), address 24576, 1 words, data_type = UINT16,
 drvModbusAsynConfigure("$(CAPAROC_ASYNPORT)_GLB_STS", "$(CAPAROC_ASYNPORT)", 0, 3, 24576, 1, "UINT16", 100, "caparoc")
 
-# Function 3 (Read Holding Registers), address 28672, 1 words, data_type = UINT16,
-drvModbusAsynConfigure("$(CAPAROC_ASYNPORT)_PS_FUNC", "$(CAPAROC_ASYNPORT)", 0, 3, 28672, 1, "UINT16", 100, "caparoc")
-
 # System Current, input voltage
 # Function 3 (Read Holding Registers), address 24577, 2 words, data_type = UINT16,
 drvModbusAsynConfigure("$(CAPAROC_ASYNPORT)_SYS_INP1", "$(CAPAROC_ASYNPORT)", 0, 3, 24577, 2, "UINT16", 100, "caparoc")
